@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { createMuiTheme, MuiThemeProvider, useMediaQuery } from '@material-ui/core';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import MainLayout from './components/MainLayout';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const themeDark = (prefersDarkMode: boolean) =>
+    createMuiTheme({
+        palette: {
+            type: prefersDarkMode ? 'dark' : 'light',
+            // background: {
+            //     default: '#222222',
+            // },
+            // text: {
+            //     primary: '#ffffff',
+            // },
+            // darkBG: {
+            //     main: blueGrey[900],
+            // },
+        },
+    });
+
+const App = (): JSX.Element => {
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    const [light, setLight] = React.useState(prefersDarkMode);
+    const theme = themeDark(light);
+
+    window.addEventListener('isUpdateAvailabel', (test: any) => {
+        // Information to show when updates are here for this app..
+        test;
+    });
+
+    useEffect(() => {
+        setLight(prefersDarkMode);
+    }, [prefersDarkMode]);
+
+    return (
+        <MuiThemeProvider theme={theme}>
+            <CssBaseline />
+            <MainLayout />
+        </MuiThemeProvider>
+    );
+};
 
 export default App;
