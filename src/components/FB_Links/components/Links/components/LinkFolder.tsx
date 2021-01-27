@@ -6,7 +6,7 @@ import LinkItem from './LinkItem';
 const useStylesLinkFolder = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            background: theme.palette.background.default,
+            background: theme.palette.background.paper,
             margin: theme.spacing(1.5),
             padding: 0,
             minWidth: theme.spacing(43),
@@ -33,8 +33,8 @@ const useStylesLinkFolder = makeStyles((theme: Theme) =>
         list: {
             margin: 0,
             padding: 0,
-            background: theme.palette.background.default,
-            borderRadius: theme.spacing(0.8),
+            background: theme.palette.background.paper,
+            // borderRadius: theme.spacing(0.8),
         },
     }),
 );

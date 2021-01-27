@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: (props: StyleProps) => {
             return {
-                background: theme.palette.background.default,
+                background: theme.palette.background.paper,
                 marginTop: ScrollHelper.getCurrentActionValueWithScrollBoundary(
                     props.scrollPos,
                     props.scrollPositionStart,
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         rootBG: (props: StyleProps) => {
             return {
-                background: theme.palette.background.default,
+                background: theme.palette.background.paper,
                 width: '100%',
                 position: 'fixed',
                 top: 0,
