@@ -16,6 +16,12 @@ const themeDark = (prefersDarkMode: boolean) =>
             // darkBG: {
             //     main: blueGrey[900],
             // },
+            secondary: {
+                light: '#a98274',
+                main: '#795548',
+                dark: '#4b2c20',
+                contrastText: '#ffffff',
+            },
         },
     });
 
