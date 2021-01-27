@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             marginTop: theme.spacing(2),
+            margin: theme.spacing(1),
             padding: '2px 4px',
             display: 'flex',
             alignItems: 'center',

@@ -14,16 +14,18 @@ import { FrameworkContext } from '../../../utils/FrameworkContext';
 const useStylesLists = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            margin: 0,
+            margin: theme.spacing(1),
+            borderRadius: theme.spacing(1),
             padding: 0,
             display: 'flex',
             flexWrap: 'wrap',
             flexDirection: 'row',
             alignItems: 'flex-start',
             justifyContent: 'space-around',
+            background: theme.palette.background.paper,
         },
         list: {
-            background: theme.palette.background.default,
+            background: theme.palette.background.paper,
             margin: theme.spacing(1.5),
             padding: 0,
             // width: '96%',

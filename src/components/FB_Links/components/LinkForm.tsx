@@ -11,6 +11,11 @@ import { I_Link } from './Links/interfaces/interfaces';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
+        root: {
+            margin: theme.spacing(1),
+            background: theme.palette.background.paper,
+            borderRadius: theme.spacing(1),
+        },
         form: {
             display: 'flex',
             justifyContent: 'space-around',
@@ -19,6 +24,18 @@ const useStyles = makeStyles((theme: Theme) =>
             '& > *': {
                 margin: theme.spacing(1),
                 width: theme.spacing(35),
+            },
+        },
+        element: {
+            [theme.breakpoints.up('sm')]: {
+                // background: 'red',
+                minWidth: '45%',
+            },
+        },
+        elementLong: {
+            [theme.breakpoints.up('sm')]: {
+                // background: 'red',
+                minWidth: '95%',
             },
         },
     }),
@@ -72,66 +89,85 @@ const LinkForm = (props: I_LinkForm): JSX.Element => {
     const canSave = Boolean(stateName) && Boolean(stateLink) && Boolean(stateFolderName) && Boolean(stateTarget);
 
     return (
-        <form className={classes.form} noValidate autoComplete="off">
-            <TextField
-                id="name"
-                label="Name"
-                required
-                value={stateName}
-                onChange={(e) => setStateName(e.target.value)}
-            />
-            <TextField
-                id="link"
-                label="Link"
-                required
-                value={stateLink}
-                onChange={(e) => setStateLink(e.target.value)}
-            />
-            <Autocomplete
-                id="folderName"
-                options={linkFolders}
-                value={stateFolderName}
-                getOptionLabel={(folder) => folder}
-                freeSolo
-                onInputChange={(e, v) => setStateFolderName(v)}
-                renderInput={(params) => <TextField {...params} label="FolderName" required value={stateFolderName} />}
-            />
-            <Autocomplete
-                id="target"
-                options={targets}
-                value={stateTarget}
-                getOptionLabel={(target) => target}
-                freeSolo
-                onInputChange={(e, v) => setStateTarget(v)}
-                renderInput={(params) => <TextField {...params} label="Target" required value={stateTarget} />}
-            />
-            <TextField
-                id="description"
-                label="Description"
-                value={stateDesc}
-                onChange={(e) => setStateDesc(e.target.value)}
-            />
-            <TextField id="owner" label={props.displayName} disabled />
-            <FormControlLabel
-                control={
-                    <Checkbox
-                        checked={stateWithColor}
-                        onChange={(e) => setStateWithColor(e.target.checked)}
-                        name="withColor"
-                    />
-                }
-                label="with Color"
-            />
-            <CompactPicker color={stateColor} onChangeComplete={(c) => setStateColor(c.hex)} />
-            <Button variant="outlined" onClick={() => onSaveLinkClicked()} disabled={!canSave}>
-                Save
-            </Button>
-            {props.withReset && (
-                <Button variant="outlined" onClick={() => resetValues()}>
-                    Reset
+        <div className={classes.root}>
+            <form className={classes.form} noValidate autoComplete="off">
+                <TextField
+                    className={classes.element}
+                    id="name"
+                    label="Name"
+                    required
+                    value={stateName}
+                    onChange={(e) => setStateName(e.target.value)}
+                />
+                <TextField
+                    className={classes.element}
+                    id="link"
+                    label="Link"
+                    required
+                    value={stateLink}
+                    onChange={(e) => setStateLink(e.target.value)}
+                />
+                <Autocomplete
+                    className={classes.element}
+                    id="folderName"
+                    options={linkFolders}
+                    value={stateFolderName}
+                    getOptionLabel={(folder) => folder}
+                    freeSolo
+                    onInputChange={(e, v) => setStateFolderName(v)}
+                    renderInput={(params) => (
+                        <TextField {...params} label="FolderName" required value={stateFolderName} />
+                    )}
+                />
+                <Autocomplete
+                    className={classes.element}
+                    id="target"
+                    options={targets}
+                    value={stateTarget}
+                    getOptionLabel={(target) => target}
+                    freeSolo
+                    onInputChange={(e, v) => setStateTarget(v)}
+                    renderInput={(params) => <TextField {...params} label="Target" required value={stateTarget} />}
+                />
+                <TextField
+                    className={classes.elementLong}
+                    id="description"
+                    label="Description"
+                    value={stateDesc}
+                    onChange={(e) => setStateDesc(e.target.value)}
+                />
+                <FormControlLabel
+                    className={classes.element}
+                    control={
+                        <Checkbox
+                            checked={stateWithColor}
+                            onChange={(e) => setStateWithColor(e.target.checked)}
+                            name="withColor"
+                        />
+                    }
+                    label="with Color"
+                />
+                <CompactPicker
+                    className={classes.element}
+                    color={stateColor}
+                    onChangeComplete={(c) => setStateColor(c.hex)}
+                />
+                <p />
+                <Button
+                    className={classes.element}
+                    variant="outlined"
+                    onClick={() => onSaveLinkClicked()}
+                    disabled={!canSave}
+                >
+                    Save
                 </Button>
-            )}
-        </form>
+                {props.withReset && (
+                    <Button variant="outlined" onClick={() => resetValues()}>
+                        Reset
+                    </Button>
+                )}
+            </form>
+        </div>
     );
 };
 

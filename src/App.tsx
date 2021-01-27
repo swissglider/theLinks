@@ -7,9 +7,9 @@ const themeDark = (prefersDarkMode: boolean) =>
     createMuiTheme({
         palette: {
             type: prefersDarkMode ? 'dark' : 'light',
-            // background: {
-            //     default: '#222222',
-            // },
+            background: {
+                default: '#f5f5f5',
+            },
             // text: {
             //     primary: '#ffffff',
             // },
