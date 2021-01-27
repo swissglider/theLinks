@@ -7,7 +7,7 @@
 	### __WORK IN PROGRESS__ - init This is the init Release
 -->
 
-### __WORK IN PROGRESS__ - Designe Changes
+### 0.1.1-beta.8 (2021-01-27) - Designe Changes
 
 Changes:   
 - Background Colors
