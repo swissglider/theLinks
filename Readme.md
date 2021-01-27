@@ -7,7 +7,7 @@
 	### __WORK IN PROGRESS__ - init This is the init Release
 -->
 
-### __WORK IN PROGRESS__ - init This is the init Release
+### 0.1.1-beta.7 (2021-01-27) - init This is the init Release
 
 Test 3
 
