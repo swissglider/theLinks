@@ -43,7 +43,7 @@ const Links = (): JSX.Element => {
 
     useEffect(() => {
         const context_ = { ...context };
-        context_.title = 'Links';
+        context_.title = 'Swissglider Links';
         context_.subNavButtons = [];
         context_.rightComponent = <GetLinksTitleAddonSimple />;
 
