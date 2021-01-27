@@ -42,6 +42,7 @@
         "workbox-streams": "^5.1.4"
     },
     "devDependencies": {
+        "@alcalzone/release-script": "^1.8.3",
         "@types/react-color": "^3.0.4",
         "@types/react-redux": "^7.1.15",
         "@types/react-router-dom": "^5.1.7",
@@ -58,7 +59,8 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "fb_deploy": "npm run build; firebase deploy --only hosting:reactlinks"
+        "fb_deploy": "npm run build; firebase deploy --only hosting:reactlinks",
+        "release": "release-script"
     },
     "eslintConfig": {
         "extends": [
