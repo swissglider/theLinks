@@ -7,7 +7,7 @@
 	### __WORK IN PROGRESS__ - init This is the init Release
 -->
 
-### __WORK IN PROGRESS__ - init Change secondary color in App themes
+### 0.1.1-beta.6 (2021-01-27) - init Change secondary color in App themes
 
 Test 3
 
