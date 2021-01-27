@@ -11,7 +11,7 @@
 
 Changes:   
 - Background Colors
-- Add more Breakpoint values
+- Add more Breakpoint values.
 
 ## Changelog
 ### 0.1.1-beta.1 (2021-01-27) - init This is the init Release
